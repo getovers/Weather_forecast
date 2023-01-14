@@ -3,7 +3,6 @@ class DataService{
     #appId = 'bf35cac91880cb98375230fb443a116f';
 
     getWeatherForecast(cityId){
-
     }
 }
 export const dataService = new DataService();
