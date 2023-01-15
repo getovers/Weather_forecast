@@ -21,5 +21,6 @@ export class Forecast{
         `<div class="row-item icon">
             <img src="http://openweathermap.org/img/wn/${this.icon}@2x.png"></img>
         </div>`);
+        return div;
     }
 }

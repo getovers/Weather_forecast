@@ -5,13 +5,15 @@ import { dataService } from './dataServive.js';
 import { ForecastListView } from './forecastListView.js';
 
 const contentSwitcher = new ContentSwitcher();
-const forecastTableBody = new ForecastListView('#tableBody')
 window.addEventListener('load', async() =>{
-    contentSwitcher.showContent();
+    const forecastListView = new ForecastListView('#tableBody');
     STATE.citiesList.forEach( async cityId => {
         const responseObj = await dataService.getWeatherForecast(cityId);
         const currentForecast = new Forecast(responseObj);
-        
+
+        forecastListView.showForecast(currentForecast);
     });
+    contentSwitcher.showContent();
     contentSwitcher.disablePreloader();
+    
 } )
