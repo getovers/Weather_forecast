@@ -2,8 +2,8 @@ class DataService{
     #url = 'http://api.openweathermap.org/data/2.5/weather';
     #appId = 'bf35cac91880cb98375230fb443a116f';
 
-    async getWeatherForecast(cityId){
-        const url = `${this.#url}?id=${cityId}&appid=${this.#appId}`;
+    async getWeatherForecast(cityId, unit){
+        const url = `${this.#url}?id=${cityId}&appid=${this.#appId}&units=${unit}`;
         const response = await fetch(url);
         if(response.ok){
             return response.json();

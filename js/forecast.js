@@ -13,7 +13,7 @@ export class Forecast{
 
         div.insertAdjacentHTML("beforeend", 
         `<div class="row-item weather">
-            <span class="weather-temp">${this.temp}</span>
+            <span class="weather-temp">${this.temp}°</span>
             <span class="weather-description">${this.description}</span>
         </div>`);
         
@@ -21,6 +21,7 @@ export class Forecast{
         `<div class="row-item icon">
             <img src="http://openweathermap.org/img/wn/${this.icon}@2x.png"></img>
         </div>`);
+
         return div;
     }
 }
